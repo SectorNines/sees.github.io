@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+
+    <!--CSS External-->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="flex flex-col items-center justify-evenly min-h-screen bg-white rounded shadow-md mb-[16px]">
+    <!--Hero website-->
+    <header>
+        <h1 class="text-3xl font-bold text-center mb-1">Todo List</h1>
+        <p class="text-lg text-gray-700">Manage your tasks efficiently</p>
+    </header>
+
+    <main class="py-[16px] rounded">
+        <!--To To Input-->
+        <form class="flex-justify-between p-[8px] bg-white rounded shadow-md mb-[1px]">
+            <div class="flex gap-[8px]">
+                <input type="text" pattern="A-Za-z/s" id="taskinput" class="border rounded p-[4px]" placeholder="Add a new task..." required>
+                <input type="date" id="dateinput" class="border rounded p-[4px]" placeholder="Due Date" required>
+                <button type="button" class="bg-blue-500 text-white p-[4px] rounded w-[50px]"
+            onclick="addTask();">+</button>
+            </div>
+
+            
+        </form>
+
+        <!--To Do Action-->
+        <section class="flex justify-between p-[8px] bg-white rounded shadow-md mb-[16px]">
+            <div class="flex gap-[8px]">
+                <button class="bg-green-200 p-[4px] rounded">Show Completed</button>
+                <button class="bg-gray-200 p-[4px] rounded">Show All</button>
+            </div>
+
+            <button class="bg-red-500 text-white p-[4px] rounded" onclick="deleteAllTasks();">Delete All</button>
+        </section> 
+
+        <!--To Do List-->
+        <section id="taskList" class="flex flex-col gap-[8px] bg-white rounded shadow-md p-[16px]">
+            <header class="text-center font-semibold mb-[8px]">Tasks</header>
+
+        <!-- Task items will be dynamically added here -->
+                <div class="task-item flex justify-between items-center p-[8px]" id="taskItem">
+                    <p class="text-gray-800">Task Empty</p>
+                </div>
+        </section>
+    </main>
+    <footer>
+
+        <span>@2025 fauzan. All rights reserved.</span>
+    </footer>
+    <!--JavaScript External-->
+    <script src="js/script.js"></script>
+</body>
+</html>
